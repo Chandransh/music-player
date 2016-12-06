@@ -8,11 +8,11 @@ header {
 }
 
 .logo {
-  background: url(../../../images/logo.png) no-repeat;
-  background-size: 90px;
+  background: url(../../../images/poppy.svg) no-repeat;
+  background-size: 126px;
   display: inline-block;
-  height: 90px;
-  width: 90px;
+  height: 126px;
+  width: 126px;
 }
 
 @media only screen and (max-width: 979px) {

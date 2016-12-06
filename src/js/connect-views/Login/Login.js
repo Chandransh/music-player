@@ -15,8 +15,9 @@ class Login extends Component {
              style={{background: '#ff6040'}}>
           <div>
             <Header/>
-            <h1>Your Favourite Music Player.</h1>
-            <h5>Listen to top songs from popular genres and create awesome playlists effortlessly.</h5>
+            <h1>Poppy</h1>
+            <h2>Your Favourite Music Player</h2>
+            <h6>Listen to top songs from popular genres and create awesome playlists effortlessly.</h6>
             <button className="btn btn-primary btn-lg">
               Let's Go
             </button>

@@ -2,7 +2,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 import './Header.css';
-import logo from '../../../images/logo.png';
 
 class Header extends Component {
   render() {

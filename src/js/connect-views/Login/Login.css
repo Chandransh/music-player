@@ -21,8 +21,9 @@
     left: 50%;
     transform: translate(-50%,-50%);
 }
-.login-container h5 {
-    padding: 0 10px 10px;
+.login-container h6 {
+    padding: 0 20px 10px;
+    line-height: 1.5;
 }
 
 .hero-image>img {
