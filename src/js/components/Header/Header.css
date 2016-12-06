@@ -1,0 +1,22 @@
+header {
+  width: 100%;
+}
+.header-container {
+  padding: 5px 0;
+  width: 100%;
+  position: relative;
+}
+
+.logo {
+  background: url(../../../images/logo.png) no-repeat;
+  background-size: 90px;
+  display: inline-block;
+  height: 90px;
+  width: 90px;
+}
+
+@media only screen and (max-width: 979px) {
+  .logo {
+    width: auto;
+  }
+}

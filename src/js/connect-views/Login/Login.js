@@ -1,0 +1,47 @@
+import React, {Component, PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {browserHistory} from 'react-router';
+
+import './Login.css';
+import Header from '../../components/Header/Header';
+import heroImageSrc from '../../../images/hero.jpg';
+
+class Login extends Component {
+  render() {
+    return (
+      <div className="login-container col-sm-12 center-block">
+        <div className="col col-sm-6 text-center"
+             style={{background: '#ff6040'}}>
+          <div>
+            <Header/>
+            <h1>Your Favourite Music Player.</h1>
+            <h5>Listen to top songs from popular genres and create awesome playlists effortlessly.</h5>
+            <button className="btn btn-primary">
+              Let's Go
+            </button>
+          </div>
+        </div>
+        <div className="col col-sm-6 text-center"
+             style={{background: '#ffffff'}}>
+          <div className="hero-image pull-right">
+            <img src={heroImageSrc}/>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+
+});
+
+const mapActionToProps = (dispatch) => ({
+
+});
+
+export default connect(
+  mapStateToProps,
+  mapActionToProps
+)(Login);
