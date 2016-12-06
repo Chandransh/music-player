@@ -17,7 +17,7 @@ class Login extends Component {
             <Header/>
             <h1>Your Favourite Music Player.</h1>
             <h5>Listen to top songs from popular genres and create awesome playlists effortlessly.</h5>
-            <button className="btn btn-primary">
+            <button className="btn btn-primary btn-lg">
               Let's Go
             </button>
           </div>
