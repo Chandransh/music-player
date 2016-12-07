@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {browserHistory} from 'react-router';
+import {Link} from 'react-router';
 
 import './Login.css';
 import Header from '../../components/Header/Header';
@@ -18,9 +18,9 @@ class Login extends Component {
             <h1>Poppy</h1>
             <h2>Your Favourite Music Player</h2>
             <h6>Listen to top songs from popular genres and create awesome playlists effortlessly.</h6>
-            <button className="btn btn-primary btn-lg">
+            <Link to="/music-player/genres" className="btn btn-primary btn-lg">
               Let's Go
-            </button>
+            </Link>
           </div>
         </div>
         <div className="col col-sm-6 text-center"
