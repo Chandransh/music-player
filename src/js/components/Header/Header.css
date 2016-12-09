@@ -6,6 +6,9 @@ header {
   width: 100%;
   position: relative;
 }
+.header-container h1 {
+  margin: -5px 0 15px
+}
 
 .logo {
   background: url(../../../images/poppy.svg) no-repeat;

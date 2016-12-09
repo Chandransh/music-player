@@ -10,6 +10,7 @@ class Header extends Component {
         <div className="header-container">
           <div className="text-center">
             <Link to="/" className="logo"></Link>
+            <h1>Poppy</h1>
           </div>
         </div>
       </header>
