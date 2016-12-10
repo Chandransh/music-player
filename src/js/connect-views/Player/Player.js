@@ -15,7 +15,7 @@ class Player extends Component {
     super(props);
     this.state = {
       tracks: this.props.getTracksByGenre,
-      currentTrackUrl: ''
+      urlParamsForPlayer: '&liking=false&download=false&buying=false&sharing=false&show_comments=false&show_user=false'
     };
   }
 
@@ -25,15 +25,13 @@ class Player extends Component {
   }
 
   handleTrackClick = (trackUrl) => {
-    this.setState({currentTrackUrl: trackUrl});
+    document.getElementById('sc-widget').src = "https://w.soundcloud.com/player/?url=" + trackUrl + this.state.urlParamsForPlayer;
   };
 
   render() {
     const {getTracksByGenre, params} = this.props;
-    let {currentTrackUrl} = this.state;
+    const {urlParamsForPlayer} = this.state;
     const _self = this;
-
-    let urlParamsForPlayer = '&liking=false&download=false&buying=false&sharing=false&show_comments=false&show_user=false';
 
     let tracksItem = getTracksByGenre.data.length > 0 && getTracksByGenre.data.map(function(trackObj,i) {
       let track = trackObj.track;
@@ -60,9 +58,6 @@ class Player extends Component {
       </li>;
     });
 
-    //currentTrackUrl for initial load of first track from the list in player and clicked track url change when new track item is clicked
-    currentTrackUrl = (currentTrackUrl.length > 0) ? currentTrackUrl : tracksItem.length > 0 && tracksItem[0].props.uri;
-
     return (
       (tracksItem.length > 0) ? <div className="col-sm-12 center-block"
            style={{background: '#ffffff'}}>
@@ -70,7 +65,7 @@ class Player extends Component {
         <h1 className="text-center">Popular songs in {params.genreName}</h1>
         <br/>
         <iframe id="sc-widget"
-                src={"https://w.soundcloud.com/player/?url=" + currentTrackUrl + urlParamsForPlayer}
+                src={"https://w.soundcloud.com/player/?url=" + tracksItem[0].props.uri + urlParamsForPlayer}
                 scrolling="no"
                 frameborder="no"
                 className="player-widget">
