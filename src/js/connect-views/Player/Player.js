@@ -4,7 +4,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {browserHistory} from 'react-router';
+import {browserHistory, Link} from 'react-router';
 
 import './Player.css';
 import Loader from '../../components/Loader/Loader';
@@ -63,16 +63,19 @@ class Player extends Component {
            style={{background: '#ffffff'}}>
         <br/>
         <h1 className="text-center">Popular songs in {params.genreName}</h1>
-        <br/>
+        <Link to="/music-player/genres"
+              className="btn btn-link">
+          &lt; Back to Genres Page
+        </Link>
+        <ul className="tracks-container">
+          {tracksItem}
+        </ul>
         <iframe id="sc-widget"
                 src={"https://w.soundcloud.com/player/?url=" + tracksItem[0].props.uri + urlParamsForPlayer}
                 scrolling="no"
                 frameborder="no"
                 className="player-widget">
         </iframe>
-        <ul className="tracks-container">
-          {tracksItem}
-        </ul>
       </div> : <Loader/>
     );
   }
