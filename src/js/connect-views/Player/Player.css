@@ -1,0 +1,63 @@
+.player-widget {
+    position: fixed;
+    width: 100%;
+    height: 117px;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    box-shadow: none;
+    border: 0;
+    z-index: 10;
+}
+
+.tracks-container {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 117px 10px;
+    display: inline-block;
+}
+.tracks-container>li {
+    width: 32%;
+    background: #f7f7f7;
+    border: 1px solid #f3f1f1;
+    float: left;
+    margin: 0 5px 10px;
+    padding: 5px 5px 25px 110px;
+    position: relative;
+}
+.tracks-container>li img, .tracks-container>li p {
+    float: left;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+.tracks-container>li img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100px;
+    background-color: #ff6040;
+}
+.tracks-container>li p {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+.tracks-container .track-title {
+    font-size: 17px;
+}
+.tracks-container .artist-name {
+    font-size: 15px;
+}
+.tracks-container .user-info {
+    position: absolute;
+    bottom: 1px;
+    right: 5px;
+    color: #999;
+    width: 70%;
+    padding: 0 3px;
+    text-align: right;
+}
