@@ -15,7 +15,7 @@ class Player extends Component {
     super(props);
     this.state = {
       tracks: this.props.getTracksByGenre,
-      urlParamsForPlayer: '&liking=false&download=false&buying=false&sharing=false&show_comments=false&show_user=false'
+      urlParamsForPlayer: '&liking=false&download=false&buying=false&sharing=false&show_comments=false&show_user=false&auto_play=true'
     };
   }
 
