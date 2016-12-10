@@ -61,12 +61,12 @@ class Player extends Component {
     return (
       (tracksItem.length > 0) ? <div className="col-sm-12 center-block"
            style={{background: '#ffffff'}}>
-        <br/>
-        <h1 className="text-center">Popular songs in {params.genreName}</h1>
         <Link to="/music-player/genres"
               className="btn btn-link">
           &lt; Back to Genres Page
         </Link>
+        <h1 className="text-center">Popular songs in {params.genreName}</h1>
+        <br/>
         <ul className="tracks-container">
           {tracksItem}
         </ul>
