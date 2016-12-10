@@ -24,6 +24,7 @@
     margin: 0 5px 10px;
     padding: 5px 5px 25px 110px;
     position: relative;
+    cursor: pointer;
 }
 .tracks-container>li img, .tracks-container>li p {
     float: left;
