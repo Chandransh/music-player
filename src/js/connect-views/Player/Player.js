@@ -65,7 +65,7 @@ class Player extends Component {
               className="btn btn-link">
           &lt; Back to Genres Page
         </Link>
-        <h1 className="text-center">Popular songs in {params.genreName}</h1>
+        <h1 className="text-center">Popular songs</h1>
         <br/>
         <ul className="tracks-container">
           {tracksItem}
