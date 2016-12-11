@@ -1,6 +1,6 @@
 .login-container {
     position: fixed;
-    overflow: hidden;
+    overflow: scroll;
     top: 0;
     left: 0;
     right: 0;
@@ -26,7 +26,13 @@
     line-height: 1.5;
 }
 
-.hero-image>img {
+.hero-image>div {
+    min-height: 500px;
     max-height: 500px;
+    display: inline-block;
+    width: 100%;
     max-width: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }

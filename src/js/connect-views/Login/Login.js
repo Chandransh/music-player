@@ -11,7 +11,7 @@ class Login extends Component {
   render() {
     return (
       <div className="login-container col-sm-12 center-block">
-        <div className="col col-sm-6 text-center"
+        <div className="col col-sm-12 col-md-6 text-center"
              style={{background: '#ff6040'}}>
           <div>
             <Header/>
@@ -22,10 +22,10 @@ class Login extends Component {
             </Link>
           </div>
         </div>
-        <div className="col col-sm-6 text-center"
+        <div className="col col-sm-12 col-md-6 text-center hidden-sm-down"
              style={{background: '#ffffff'}}>
           <div className="hero-image pull-right">
-            <img src={heroImageSrc}/>
+            <div style={{backgroundImage: 'url(' + heroImageSrc + ')'}}></div>
           </div>
         </div>
       </div>
