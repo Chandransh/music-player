@@ -8,7 +8,6 @@ import {browserHistory, Link} from 'react-router';
 
 import './Player.css';
 import Loader from '../../components/Loader/Loader';
-import '../../utils/soundcloud-api';
 
 class Player extends Component {
   constructor(props) {
