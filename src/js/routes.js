@@ -2,8 +2,8 @@ import React from 'react';
 import {Route, IndexRedirect, Redirect} from 'react-router';
 
 import MusicPlayer from './containers/MusicPlayer/MusicPlayer';
-import Login from './connect-views/Login/Login';
-import Genres from './components/Genres/Genres';
+import Login from './components/Login/Login';
+import Genres from './connect-views/Genres/Genres';
 import Player from './connect-views/Player/Player';
 import NotFoundView from './static-views/NotFoundView/NotFoundView';
 

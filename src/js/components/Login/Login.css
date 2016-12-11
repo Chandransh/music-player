@@ -1,6 +1,6 @@
 .login-container {
     position: fixed;
-    overflow: scroll;
+    overflow: hidden;
     top: 0;
     left: 0;
     right: 0;
@@ -35,4 +35,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+@media only screen and (max-width: 768px) {
+    .login-container {
+        overflow: scroll;
+    }
 }
