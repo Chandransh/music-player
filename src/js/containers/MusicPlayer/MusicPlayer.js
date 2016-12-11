@@ -18,11 +18,9 @@ class MusicPlayer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  // itemList: state.itemList
 });
 
 const mapActionToProps = (dispatch) => ({
-  // ItemList: bindActionCreators(ItemList, dispatch)
 });
 
 export default connect(
