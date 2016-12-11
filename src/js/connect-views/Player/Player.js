@@ -14,8 +14,10 @@ class Player extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tracks: this.props.getTracksByGenre,
-      urlParamsForPlayer: '&liking=false&download=false&buying=false&sharing=false&show_comments=false&show_user=false&auto_play=true'
+      urlParamsForPlayer: '&liking=false&download=false&buying=false&sharing=false&show_comments=false&show_user=false&auto_play=true',
+      currentTrackId: 0,
+      previousTrackId: null,
+      nextTrackId: 1
     };
   }
 
@@ -24,20 +26,52 @@ class Player extends Component {
     location.state == null && params.genreName !== location.state && browserHistory.push('/music-player/genres');
   }
 
-  handleTrackClick = (trackUrl) => {
+  handleTrackClick = (trackUrl, currentTrackId) => {
+    document.getElementById('sc-widget').src = "https://w.soundcloud.com/player/?url=" + trackUrl + this.state.urlParamsForPlayer;
+
+    this.setState({
+      currentTrackId: currentTrackId,
+      previousTrackId: currentTrackId !== 0 ? currentTrackId - 1 : null,
+      nextTrackId: (currentTrackId < this.props.getTracksByGenre.data.length - 1) ? currentTrackId + 1 : null
+    });
+  };
+
+  playPreviousTrack = () => {
+    const previousTrackId = this.state.previousTrackId;
+
+    this.setState({
+      currentTrackId: previousTrackId,
+      previousTrackId: (previousTrackId !== 0) ? previousTrackId - 1 : null,
+      nextTrackId: previousTrackId + 1
+    });
+
+    let trackUrl = this.props.getTracksByGenre.data[previousTrackId].track.uri;
+    document.getElementById('sc-widget').src = "https://w.soundcloud.com/player/?url=" + trackUrl + this.state.urlParamsForPlayer;
+  };
+
+  playNextTrack = () => {
+    const nextTrackId = this.state.nextTrackId;
+
+    this.setState({
+      currentTrackId: nextTrackId,
+      previousTrackId: nextTrackId - 1,
+      nextTrackId: (nextTrackId + 1 < this.props.getTracksByGenre.data.length - 1) ? nextTrackId + 1 : null
+    });
+
+    let trackUrl = this.props.getTracksByGenre.data[nextTrackId].track.uri;
     document.getElementById('sc-widget').src = "https://w.soundcloud.com/player/?url=" + trackUrl + this.state.urlParamsForPlayer;
   };
 
   render() {
-    const {getTracksByGenre, params} = this.props;
-    const {urlParamsForPlayer} = this.state;
     const _self = this;
+    const {getTracksByGenre} = _self.props;
+    const {urlParamsForPlayer, previousTrackId, nextTrackId} = _self.state;
 
     let tracksItem = getTracksByGenre.data.length > 0 && getTracksByGenre.data.map(function(trackObj,i) {
       let track = trackObj.track;
       return <li className="clearfix"
                  key={i} uri={track.uri}
-                 onClick={_self.handleTrackClick.bind(null, track.uri)}>
+                 onClick={_self.handleTrackClick.bind(null, track.uri, i)}>
         <div>
           <img src={track.artwork_url}
                alt={track.artwork_url}/>
@@ -69,6 +103,16 @@ class Player extends Component {
         <br/>
         <ul className="tracks-container">
           {tracksItem}
+        </ul>
+        <ul className="player-nav">
+          {previousTrackId != null && <li className="btn btn-link"
+                                          onClick={_self.playPreviousTrack}>
+            Previous
+          </li>}
+          {nextTrackId != null && <li className="btn btn-link"
+              onClick={_self.playNextTrack}>
+            Next
+          </li>}
         </ul>
         <iframe id="sc-widget"
                 src={"https://w.soundcloud.com/player/?url=" + tracksItem[0].props.uri + urlParamsForPlayer}

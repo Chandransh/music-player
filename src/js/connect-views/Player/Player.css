@@ -8,6 +8,7 @@
     box-shadow: none;
     border: 0;
     z-index: 10;
+    background: #f3f1f1;
 }
 
 .tracks-container {
@@ -61,4 +62,19 @@
     width: 70%;
     padding: 0 3px;
     text-align: right;
+}
+
+/*For previous and next buttons in player*/
+.player-nav {
+    position: fixed;
+    z-index: 11;
+    bottom: 55px;
+    left: 165px;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+.player-nav>li {
+    padding: 5px;
+    font-size: 15px;
 }
