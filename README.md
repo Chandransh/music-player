@@ -1,4 +1,4 @@
-# Music Player App
+# Poppy - A Music Player App
 
 ##How to run the project using npm:
 
